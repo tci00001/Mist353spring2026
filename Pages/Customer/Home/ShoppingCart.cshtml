@@ -1,0 +1,50 @@
+﻿@page
+@model SportsStore_Spr2026.Pages.Customer.Home.ShoppingCartModel
+
+
+<h2>Your Shopping Cart</h2>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (int i = 0; i < Model.CartItems.Count; i++)
+            {
+                <tr>
+                    <td>@Model.CartItems[i].Name</td>
+                    <td>
+                        <input asp-for="@Model.CartItems[i].CartID" type="hidden"/>
+                        <input asp-for="@Model.CartItems[i].Name" type="hidden" />
+                        <input asp-for="@Model.CartItems[i].ProductID" type="hidden" />
+
+                        <input asp-for="@Model.CartItems[i].Quantity" min="0" class="form-control"/>
+                        
+                    </td>
+
+                    <td>@Model.CartItems[i].Price.ToString("c")</td>
+
+                     <td>@Model.CartItems[i].Subtotal.ToString("c")</td>   
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+
+    <div class="text-end mt-3">
+        Total: @Model.CartTotal.ToString("c")
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Cart</button>
+
+</form>
+
+<a asp-page="PlaceOrder" class="btn btn-success">Proceed To Checkout</a>

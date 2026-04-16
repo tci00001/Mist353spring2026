@@ -22,14 +22,17 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                            <!-- This is the home page link, it will navigate to the home page when clicked. It is defined in the Index.cshtml file. -->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Products/Index">Products</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Customer/Home/Index">Browse Products</a>
                             <!-- This is the privacy page link, it will navigate to the privacy page when clicked. It is defined in the Privacy.cshtml file. -->
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Customer/Home/ShoppingCart">My Cart</a>
+                            <!-- This is the privacy page link, it will navigate to the privacy page when clicked. It is defined in the Privacy.cshtml file. -->
+                        </li>
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

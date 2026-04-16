@@ -1,0 +1,69 @@
+﻿@page
+@model SportsStore_Spr2026.Pages.Customer.Home.PlaceOrderModel
+@{
+}
+
+<div class="row">
+    <!--> Leftside: Customer info -->
+    <div class="col-md-6">
+        <form method="post">
+            <h3>Shipping Information</h3>
+
+            <div class="mb-3">
+                <label asp-for="OrderInput.Name" class="form-label"></label>
+                <input asp-for="OrderInput.Name" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="OrderInput.Address" class="form-label"></label>
+                <input asp-for="OrderInput.Address" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="OrderInput.City" class="form-label"></label>
+                <input asp-for="OrderInput.City" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="OrderInput.ZipCode" class="form-label"></label>
+                <input asp-for="OrderInput.ZipCode" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="OrderInput.State" class="form-label"></label>
+                <input asp-for="OrderInput.State" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="OrderInput.CreditCardNumber" class="form-label"></label>
+                <input asp-for="OrderInput.CreditCardNumber" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Place Order</button>
+
+
+        </form>
+    </div>
+
+    <!--> Rightside: Cart Items -->
+    <div class="col-md-6">
+        <h3>Order Summary</h3>
+        <ul class="list-group">
+            @foreach(var item in Model.CartItems)
+            {
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>@item.Name (x @item.Quantity)</span>
+                    <span>@item.Subtotal.ToString("c")</span>
+                    
+                    
+                    </li>
+            }
+
+        </ul>
+        <hr />
+        <div>
+            <strong>Total:@Model.CartTotal.ToString("c")</strong>
+        </div>
+    </div>
+
+</div>

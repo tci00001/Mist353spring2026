@@ -8,7 +8,7 @@
     
     @foreach (var product in Model.ProductList)
     {
-        <div class="col-md-4">
+        <div class="col-md-4 mb-1">
             <div class="card">
                 <img src="~/images/@product.image" class="card-img-top" style="height:200px" alt="@product.Name" />
                 <div class="card-body">
@@ -24,7 +24,7 @@
                     
                     </p>
                     
-                    <a asp-page="/Products/ProductDetails" asp-route-id="@product.ProductId" class="btn btn-primary"></a>
+                    <a asp-page="/Products/ProductDetails" asp-route-id="@product.ProductId" class="btn btn-primary">Product Details</a>
 
                     
                     

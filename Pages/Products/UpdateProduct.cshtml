@@ -6,7 +6,9 @@
 <form method="post">
     <div class="form-group">
         <label>Product ID</label>
-        <input type="text" class="form-control" id="productID" asp-for="product.ProductID" hidden />
+        <input type="text" class="form-control" id="productID" asp-for="product.ProductId"
+        hidden/>
+        
     </div>
 
     <div class="form-group">
@@ -26,26 +28,26 @@
 
     <div class="form-group">
         <label>Thumbnail</label>
-        <input type="text" class="form-control" id="Thumbnail" asp-for="product.Thumbnail" required />
+        <input type="text" class="form-control" id="Thumbnail" asp-for="product.thumbnail" required />
     </div>
 
     <div class="form-group">
         <label>Image</label>
-        <input type="text" class="form-control" id="Image" asp-for="product.Image" required />
+        <input type="text" class="form-control" id="Image" asp-for="product.image" required />
     </div>
 
 
     <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="PromoFront" asp-for="product.PromoFront" />
-        <label class="form-check-label" for="PromoFront">Promo Front</label>
+        <label class="form-check-label">Promo Front</label>
     </div>
     <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="PromoFront" asp-for="product.PromoFront" />
-        <label class="form-check-label" for="PromoFront">Promo Front</label>
+        <input type="checkbox" class="form-check-input" id="PromoDept" asp-for="product.PromoDept" />
+        <label class="form-check-label">Promo Dept</label>
     </div>
 
 
-    button type="submit" class="btn btn-primary">Update Product</button>">
+    <button type="submit" class="btn btn-primary">Update Product</button>">
 
 
 </form>

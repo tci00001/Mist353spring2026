@@ -16,6 +16,8 @@ namespace SportsStore_Spr2026.Data
         //create product
 
         void CreateProduct(Product product);
+
+        bool UpdateProduct(Product product);
        
 
 
